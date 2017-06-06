@@ -9,12 +9,17 @@ describe('Feature Test:', function (){
     airport = new Airport();
   });
 
+  describe('under normal conditions', function(){
+    beforeEach(function(){
+      spyOn(Math,'random').and.returnValue(0);
+  });
+          
   it('planes can be instructed to land at an airport', function(){
     plane.land(airport);
     expect(airport.planes()).toContain(plane);
   });
 
-  it("Planes can be instructed to take off from an airport", function(){
+  it("planes can be instructed to take off from an airport", function(){
     plane.land(airport);
     plane.takeoff();
     expect(airport.planes()).not.toContain(plane);
