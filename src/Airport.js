@@ -11,19 +11,15 @@ Airport.prototype.planes = function () {
 };
 
 Airport.prototype.clearForLanding = function (plane) {
-    if (this._weather.isStormy() ) {
-        throw new Error('cannot land during storm')
+    if (this._weather.isStormy()) {
+        throw new Error('cannot land during storm');
     }
     this._hangar.push(plane);
 };
 
-Airport.prototype.clearForTakeOff = function () {
-    if (this._weather.isStormy() ) {
-        throw new Error('cannot takeoff during storm')
+Airport.prototype.clearForTakeOff = function (plane) {
+    if (this._weather.isStormy()) {
+        throw new Error('cannot takeoff during storm');
     }
     this._hangar = [];
-};
-
-Airport.prototype.isStormy = function () {
-    return false;
 };

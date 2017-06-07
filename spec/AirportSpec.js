@@ -8,7 +8,7 @@ describe('Airport', function () {
   beforeEach(function (){
     airport = new Airport(); 
     weather = jasmine.createSpyObj('weather', ['isStormy']);
-    plane = jasmine.createSpy('plane', ['land', 'takeoff']);
+    plane = jasmine.createSpy('plane');
   });
 
 
